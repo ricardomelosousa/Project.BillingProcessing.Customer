@@ -6,15 +6,19 @@ namespace Project.BillingProcessing.Customer.Domain.CustomerEntity
     {
         public string Name { get; set; }
         public string State { get; set; }
-        public int Identification { get; set; }
+        public long Identification { get; set; }
 
         public Customer(string name, string state, string identification)
         {
-            Name = name;
-            State = state;
-            Identification = FormatIdentification(identification);
+            this.Name = name;
+            this.State = state;
+            this.Identification = FormatIdentification(identification);
         }
-        public int FormatIdentification(string identifiation)
+        public Customer() 
+        {
+        
+        }
+        public long FormatIdentification(string identifiation)
         {
             if (identifiation == null)
                 throw new CustomerException("Cpf invalido!");
@@ -52,7 +56,7 @@ namespace Project.BillingProcessing.Customer.Domain.CustomerEntity
                 if (numeros[10] != 11 - resultado)
                     throw new CustomerException("Cpf invalido!");
 
-            return Convert.ToInt32(valor);
+            return Convert.ToInt64(valor);
         }
 
     }

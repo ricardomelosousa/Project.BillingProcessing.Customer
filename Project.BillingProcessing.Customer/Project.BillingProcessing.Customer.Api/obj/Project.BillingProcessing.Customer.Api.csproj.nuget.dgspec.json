@@ -31,7 +31,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Infra\\Project.BillingProcessing.Customer.Infra.csproj": {
+                "projectPath": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Infra\\Project.BillingProcessing.Customer.Infra.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -47,6 +51,10 @@
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.14.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -67,6 +75,140 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Domain\\Project.BillingProcessing.Customer.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Domain\\Project.BillingProcessing.Customer.Domain.csproj",
+        "projectName": "Project.BillingProcessing.Customer.Domain",
+        "projectPath": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Domain\\Project.BillingProcessing.Customer.Domain.csproj",
+        "packagesPath": "C:\\Users\\ricardo.sousa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ricardo.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.p3store.com.br:443/P3NuGet/nuget": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Infra\\Project.BillingProcessing.Customer.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Infra\\Project.BillingProcessing.Customer.Infra.csproj",
+        "projectName": "Project.BillingProcessing.Customer.Infra",
+        "projectPath": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Infra\\Project.BillingProcessing.Customer.Infra.csproj",
+        "packagesPath": "C:\\Users\\ricardo.sousa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ricardo.sousa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.p3store.com.br:443/P3NuGet/nuget": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Domain\\Project.BillingProcessing.Customer.Domain.csproj": {
+                "projectPath": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Domain\\Project.BillingProcessing.Customer.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
