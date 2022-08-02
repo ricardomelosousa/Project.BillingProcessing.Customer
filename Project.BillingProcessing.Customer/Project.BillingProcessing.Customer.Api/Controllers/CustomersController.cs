@@ -28,7 +28,7 @@ namespace Project.BillingProcessing.Customer.Api.Controllers
             {
                 var identificationFormated = new Domain.CustomerEntity.Customer().FormatIdentification(identification);
                 var customer = await _customerRepository.FindBy(a => a.Identification == identificationFormated);
-                if (customer.Count == 0)
+                if (customer.Count() == 0)
                     return NotFound();
                 return Ok(customer.FirstOrDefault());
             }
@@ -51,8 +51,7 @@ namespace Project.BillingProcessing.Customer.Api.Controllers
                 var customer = await _customerRepository.FindBy(a => a.Identification == identificationFormated);
                 if (customer != null)
                     return BadRequest($"Cliente com cpf {customerDto.Identification} já cadastrado anteriormente.");
-                _customerRepository.Create(new Domain.CustomerEntity.Customer(customerDto.Name, customerDto.State, customerDto.Identification));
-                await _customerRepository.UnitOfWork.SaveEntitiesAsync();
+                var result = _customerRepository.Create(new Domain.CustomerEntity.Customer(customerDto.Name, customerDto.State, customerDto.Identification));
                 return Ok();
             }
             catch (Exception ex)

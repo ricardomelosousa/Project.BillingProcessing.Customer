@@ -16,15 +16,16 @@
             _customerContext = customerContext;
         }
 
-        public void Create(Domain.CustomerEntity.Customer customer)
+        public int Create(Domain.CustomerEntity.Customer customer)
         {
             _customerContext.Add(customer);
-           
+            var customerId = _customerContext.SaveChanges();
+            return customerId;
         }
 
-        public async Task<IList<Domain.CustomerEntity.Customer>> FindBy(Expression<Func<Domain.CustomerEntity.Customer, bool>> where)
+        public async Task<IEnumerable<Domain.CustomerEntity.Customer>> FindBy(Expression<Func<Domain.CustomerEntity.Customer, bool>> where)
         {
-           return await _customerContext.Set<Domain.CustomerEntity.Customer>().Where(where).ToListAsync();
+            return await _customerContext.Set<Domain.CustomerEntity.Customer>().Where(where).ToListAsync();
         }
     }
 }
