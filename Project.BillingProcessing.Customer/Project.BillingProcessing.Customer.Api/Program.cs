@@ -1,5 +1,3 @@
-
-
 var builder = WebApplication.CreateBuilder(args);
 var logger = new LoggerConfiguration()
         .ReadFrom.Configuration(builder.Configuration)
@@ -16,6 +14,7 @@ builder.Services.AddSwaggerGen();
 var conSqlServer = builder.Configuration.GetConnectionString("ConnectionStringSql");
 builder.Services.AddDbContext<CustomerContext>(options => options.UseSqlServer(conSqlServer, options => options.EnableRetryOnFailure()));
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 
 var app = builder.Build();
@@ -34,3 +33,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+public partial class Program { }

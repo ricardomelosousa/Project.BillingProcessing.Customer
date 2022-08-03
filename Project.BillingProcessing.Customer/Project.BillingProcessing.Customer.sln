@@ -3,21 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.BillingProcessing.Customer.Api", "Project.BillingProcessing.Customer.Api\Project.BillingProcessing.Customer.Api.csproj", "{9266CC79-69D0-48A5-9216-003CED3C64E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.BillingProcessing.Customer.Api", "Project.BillingProcessing.Customer.Api\Project.BillingProcessing.Customer.Api.csproj", "{9266CC79-69D0-48A5-9216-003CED3C64E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CEB22378-2061-4D55-B6CC-B802971448E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3DC662FA-AF94-4F5C-9067-5841F541E14B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.BillingProcessing.Customer.Api.Test", "Project.BillingProcessing.Customer.Api.Test\Project.BillingProcessing.Customer.Api.Test.csproj", "{2802DCD4-D1D1-4C49-AD03-605C141A2E00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.BillingProcessing.Customer.Test", "Project.BillingProcessing.Customer.Api.Test\Project.BillingProcessing.Customer.Test.csproj", "{2802DCD4-D1D1-4C49-AD03-605C141A2E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.BillingProcessing.Customer.Domain", "Project.BillingProcessing.Customer.Domain\Project.BillingProcessing.Customer.Domain.csproj", "{1A801F4D-5C89-4B55-9EC3-CFF9DA2079D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.BillingProcessing.Customer.Domain", "Project.BillingProcessing.Customer.Domain\Project.BillingProcessing.Customer.Domain.csproj", "{1A801F4D-5C89-4B55-9EC3-CFF9DA2079D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.BillingProcessing.Customer.Infra", "Project.BillingProcessing.Customer.Infra\Project.BillingProcessing.Customer.Infra.csproj", "{4A36A3B6-CC47-46C0-8B93-B409E2E35E0E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.BillingProcessing.Customer.Domain.Test", "Project.BillingProcessing.Customer.Domain.Test\Project.BillingProcessing.Customer.Domain.Test.csproj", "{D6BF123B-329A-4EF5-A145-3852D6D05E08}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.BillingProcessing.Customer.Infra.Test", "Project.BillingProcessing.Customer.Infra.Test\Project.BillingProcessing.Customer.Infra.Test.csproj", "{F83583BC-3FE8-4C9C-9C4B-05727F741B3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.BillingProcessing.Customer.Infra", "Project.BillingProcessing.Customer.Infra\Project.BillingProcessing.Customer.Infra.csproj", "{4A36A3B6-CC47-46C0-8B93-B409E2E35E0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,14 +37,6 @@ Global
 		{4A36A3B6-CC47-46C0-8B93-B409E2E35E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A36A3B6-CC47-46C0-8B93-B409E2E35E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A36A3B6-CC47-46C0-8B93-B409E2E35E0E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6BF123B-329A-4EF5-A145-3852D6D05E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6BF123B-329A-4EF5-A145-3852D6D05E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6BF123B-329A-4EF5-A145-3852D6D05E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6BF123B-329A-4EF5-A145-3852D6D05E08}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F83583BC-3FE8-4C9C-9C4B-05727F741B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F83583BC-3FE8-4C9C-9C4B-05727F741B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F83583BC-3FE8-4C9C-9C4B-05727F741B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F83583BC-3FE8-4C9C-9C4B-05727F741B3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,8 +46,6 @@ Global
 		{2802DCD4-D1D1-4C49-AD03-605C141A2E00} = {3DC662FA-AF94-4F5C-9067-5841F541E14B}
 		{1A801F4D-5C89-4B55-9EC3-CFF9DA2079D5} = {CEB22378-2061-4D55-B6CC-B802971448E6}
 		{4A36A3B6-CC47-46C0-8B93-B409E2E35E0E} = {CEB22378-2061-4D55-B6CC-B802971448E6}
-		{D6BF123B-329A-4EF5-A145-3852D6D05E08} = {3DC662FA-AF94-4F5C-9067-5841F541E14B}
-		{F83583BC-3FE8-4C9C-9C4B-05727F741B3F} = {3DC662FA-AF94-4F5C-9067-5841F541E14B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18201D51-C237-4D91-B002-4E380AE27343}

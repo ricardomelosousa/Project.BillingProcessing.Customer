@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "j9F86zOZlazxVNe6GZA33jiZ3n/zfjnrln+6ZnmZnPYI5LfnMZsGLwRmBdWtFmag/pDN7MuqmWGLGChkdhilPw==",
+  "dgSpecHash": "vXG3iYXdRpKH2G3ZSdWMT7BhUT8YEqw1AbP85f1GbgvUaxDjg2nVB3lNAoeUKTA5ow5iUf24ElCJP1bM8g4C4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Infra\\Project.BillingProcessing.Customer.Infra.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.7\\microsoft.entityframeworkcore.6.0.7.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.7\\microsoft.entityframeworkcore.abstractions.6.0.7.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.7\\microsoft.entityframeworkcore.analyzers.6.0.7.nupkg.sha512",
+    "C:\\Users\\ricardo.sousa\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\6.0.7\\microsoft.entityframeworkcore.inmemory.6.0.7.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.7\\microsoft.entityframeworkcore.relational.6.0.7.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.7\\microsoft.entityframeworkcore.sqlserver.6.0.7.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",

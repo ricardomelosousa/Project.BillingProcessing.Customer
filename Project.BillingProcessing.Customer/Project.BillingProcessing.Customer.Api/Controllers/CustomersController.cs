@@ -8,13 +8,13 @@ namespace Project.BillingProcessing.Customer.Api.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly ICustomerRepository _customerRepository;
-        private readonly ILogger<CustomersController> _logger;
+        private readonly ICustomerService _customerService;
+       
 
-        public CustomersController(ICustomerRepository customerRepository, ILogger<CustomersController> logger)
+        public CustomersController(ICustomerService customerService)
         {
-            _customerRepository = customerRepository;
-            _logger = logger;
+            _customerService = customerService;
+          
         }
 
 
@@ -27,10 +27,10 @@ namespace Project.BillingProcessing.Customer.Api.Controllers
             try
             {
                 var identificationFormated = new Domain.CustomerEntity.Customer().FormatIdentification(identification);
-                var customer = await _customerRepository.FindBy(a => a.Identification == identificationFormated);
-                if (customer.Count() == 0)
-                    return NotFound();
-                return Ok(customer.FirstOrDefault());
+                var customer = await _customerService.FindBy(a => a.Identification == identificationFormated);
+                if (customer == null)
+                    return NotFound("Cliente não localizado");
+                return Ok(customer);
             }
             catch (Exception ex)
             {
@@ -48,15 +48,15 @@ namespace Project.BillingProcessing.Customer.Api.Controllers
             try
             {
                 var identificationFormated = new Domain.CustomerEntity.Customer().FormatIdentification(customerDto.Identification);
-                var customer = await _customerRepository.FindBy(a => a.Identification == identificationFormated);
+                var customer = await _customerService.FindBy(a => a.Identification == identificationFormated);
                 if (customer != null)
                     return BadRequest($"Cliente com cpf {customerDto.Identification} já cadastrado anteriormente.");
-                var result = _customerRepository.Create(new Domain.CustomerEntity.Customer(customerDto.Name, customerDto.State, customerDto.Identification));
+                var result = _customerService.Create(new Domain.CustomerEntity.Customer(customerDto.Name, customerDto.State, customerDto.Identification));
                 return Ok();
             }
             catch (Exception ex)
             {
-                _logger.LogCritical("Error in CreateCustomer ", customerDto, ex.Message);
+                //_logger.LogCritical("Error in CreateCustomer ", customerDto, ex.Message);
                 return BadRequest(ex.Message);
             }
 
