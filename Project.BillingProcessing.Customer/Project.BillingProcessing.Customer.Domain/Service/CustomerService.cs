@@ -12,9 +12,18 @@ namespace Project.BillingProcessing.Customer.Domain.Service
         }
         public async Task<int> Create(CustomerEntity.Customer customer)
         {
-            _customerRespository.Create(customer);
-            var customerId = await _customerRespository.UnitOfWork.SaveChangesAsync();
-            return customerId;
+            try
+            {
+                _customerRespository.Create(customer);
+                var customerId = await _customerRespository.UnitOfWork.SaveChangesAsync();
+                return customerId;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+           
         }
 
         public async Task<CustomerEntity.Customer> FindBy(Expression<Func<CustomerEntity.Customer, bool>> where)

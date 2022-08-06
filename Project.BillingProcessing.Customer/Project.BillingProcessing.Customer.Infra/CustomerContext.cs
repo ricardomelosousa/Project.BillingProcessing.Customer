@@ -4,7 +4,7 @@ namespace Project.BillingProcessing.Customer.Infra
 {
     public class CustomerContext : DbContext, IUnitOfWork
     {
-        private DbSet<Domain.CustomerEntity.Customer> Customers;
+        public virtual DbSet<Domain.CustomerEntity.Customer> Customers { get; set; }
 
         public CustomerContext(DbContextOptions<CustomerContext> options) : base(options) { }
 

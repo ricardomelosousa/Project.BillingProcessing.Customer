@@ -2,6 +2,9 @@
 {
     public abstract class Entity
     {
-       public virtual int Id { get; set; }
+        public virtual int Id { get; set; }
+
+        public virtual DateTime DateCreation { get; set; }
+        public virtual DateTime DateModified { get; set; }
     }
 }

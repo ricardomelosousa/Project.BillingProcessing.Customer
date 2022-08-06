@@ -12,6 +12,8 @@ public class Customer : Entity
         this.Name = name;
         this.State = state;
         this.Identification = FormatIdentification(identification);
+        this.DateCreation = DateTime.Now;
+
     }
     public Customer()
     {

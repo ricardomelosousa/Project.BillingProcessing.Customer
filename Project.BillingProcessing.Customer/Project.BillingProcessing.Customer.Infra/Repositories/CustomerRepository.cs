@@ -16,9 +16,10 @@
             _customerContext = customerContext;
         }
 
-        public void Create(Domain.CustomerEntity.Customer customer)
+        public async Task Create(Domain.CustomerEntity.Customer customer)
         {
-            _customerContext.Add(customer);  
+            await _customerContext.Customers.AddAsync(customer);
+          
         }
 
         public async Task<Domain.CustomerEntity.Customer> FindBy(Expression<Func<Domain.CustomerEntity.Customer, bool>> where) 
