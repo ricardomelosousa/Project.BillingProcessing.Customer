@@ -5,3 +5,5 @@
     [Identification] bigint NOT NULL,	
     [DateCreation] datetime NOT NULL,
     [DateModified] datetime NULL)
+
+    CREATE INDEX index_Identification ON Customer (Identification);
