@@ -15,6 +15,8 @@ var conSqlServer = builder.Configuration.GetConnectionString("ConnectionStringSq
 builder.Services.AddDbContext<CustomerContext>(options => options.UseSqlServer(conSqlServer, options => options.EnableRetryOnFailure()));
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddGrpc();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
 var app = builder.Build();

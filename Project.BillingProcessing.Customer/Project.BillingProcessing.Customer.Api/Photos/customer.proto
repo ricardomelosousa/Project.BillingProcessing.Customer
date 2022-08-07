@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "Project.BillingProcessing.Customer.Api.Photos";
+
+
+service  CustomerProtoService
+{
+   rpc GetCustomerByIdentification(GetCustomerByIdentificationRequest) returns (CustomerModelResponse);
+   rpc CreateCustomer(CustomerModelRequest) returns (CreateCustomerModelResponse);
+
+}
+  message GetCustomerByIdentificationRequest
+   {
+      string identification = 1;
+   }
+   message CustomerModelResponse
+   {
+       string name = 1;
+      int32 identification = 2;  
+      string state = 3;
+   }
+     message CustomerModelRequest
+   {
+       string name = 1;
+      string identification = 2;  
+      string state = 3;
+   }
+   message CreateCustomerModelResponse
+   {
+     int32 id = 1;
+   }
+
+ 

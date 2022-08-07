@@ -13,6 +13,8 @@ public class Startup
 
         services.AddScoped<ICustomerRepository, CustomerRepository>();
         services.AddScoped<ICustomerService, CustomerService>();
+        services.AddGrpc();
+        services.AddAutoMapper(typeof(Startup));
 
         services.AddControllersWithViews();
     }
