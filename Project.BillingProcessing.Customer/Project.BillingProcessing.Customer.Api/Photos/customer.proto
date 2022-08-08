@@ -16,7 +16,7 @@ service  CustomerProtoService
    message CustomerModelResponse
    {
        string name = 1;
-      int32 identification = 2;  
+      int64 identification = 2;  
       string state = 3;
    }
      message CustomerModelRequest

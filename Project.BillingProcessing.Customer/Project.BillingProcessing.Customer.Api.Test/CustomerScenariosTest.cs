@@ -1,13 +1,21 @@
+using AutoMapper;
+using Grpc.Core.Testing;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Project.BillingProcessing.Customer.Api.Controllers;
+using Project.BillingProcessing.Customer.Api.Photos;
+using Project.BillingProcessing.Customer.Api.Services;
 using Project.BillingProcessing.Customer.Domain.Service.Interfaces;
+using System.Threading.Tasks;
 
 namespace Project.BillingProcessing.Customer.Test;
 public class CustomerScenariosTest : IClassFixture<CustomerScenariosBaseTest<Program>>
 {
     private readonly Mock<ICustomerService> _customerServiceMock;
     private readonly Mock<IUnitOfWork> _unitMock;
-    private readonly Mock<ILogger> _logger;
+    private readonly Mock<ILogger<CustomerGrpcService>> _loggerMock;
+    private readonly Mock<IMapper> _mapperMock;
+
     private List<Domain.CustomerEntity.Customer> Customers;
     private readonly HttpClient _client;
 
@@ -15,8 +23,10 @@ public class CustomerScenariosTest : IClassFixture<CustomerScenariosBaseTest<Pro
     {
         _client = factory.CreateClient();
         _customerServiceMock = new Mock<ICustomerService>();
-        _logger = new Mock<ILogger>();
+        _loggerMock = new Mock<ILogger<CustomerGrpcService>>();
         _unitMock = new Mock<IUnitOfWork>();
+        _mapperMock = new Mock<IMapper>();
+
         Customers = new List<Domain.CustomerEntity.Customer>()
             {
               new Domain.CustomerEntity.Customer(){ Id = 1, Identification = 12345678954, Name = "Ricardo 1"},
@@ -144,6 +154,40 @@ public class CustomerScenariosTest : IClassFixture<CustomerScenariosBaseTest<Pro
         var customerId = await _customerServiceMock.Object.Create(customer);
         //A
         Assert.Equal(1, customerId);
+    }
+
+    [Theory]
+    [InlineData("375.142.890-97")]
+    [InlineData("627.101.760-68")]
+    [InlineData("154.078.550-54")]
+    public async Task Test_Show_Customer_By_grpc(string identification)
+    {
+        // A       
+        var identificationFormated = new Domain.CustomerEntity.Customer().FormatIdentification(identification);
+        _customerServiceMock.Setup(a => a.FindBy(a => a.Identification == identificationFormated)).ReturnsAsync(Customers.Where(a => a.Identification == identificationFormated).FirstOrDefault());
+        var service = new CustomerGrpcService(_customerServiceMock.Object, _mapperMock.Object, _loggerMock.Object);
+        // A
+        var response = await service.GetCustomerByIdentification(new Api.Photos.GetCustomerByIdentificationRequest { Identification = identification }, TestServerCallContext.Create());
+        // A        
+        Assert.Equal(Customers.Where(a => a.Identification == identificationFormated).FirstOrDefault(), _mapperMock.Object.Map<Customer.Domain.CustomerEntity.Customer>(response));
+    }
+
+
+    [Fact]
+    public async Task Test_Create_Customer_By_grpc()
+    {
+        //A
+        var customer = new Domain.CustomerEntity.Customer("Ricardo", "1", "627.101.760-68");
+        _customerServiceMock.Setup(a => a.Create(customer)).ReturnsAsync(1);
+        var service = new CustomerGrpcService(_customerServiceMock.Object, _mapperMock.Object, _loggerMock.Object);
+        _customerServiceMock.Setup(a => a.Create(customer)).ReturnsAsync(1);
+
+        //A
+        var customerId = await _customerServiceMock.Object.Create(customer);
+        var customerModelRequest = _mapperMock.Object.Map<CustomerModelRequest>(customer);
+        var response = await service.CreateCustomer(customerModelRequest, TestServerCallContext.Create());
+        //A
+        Assert.Equal(customerId, response.Id);
     }
 
 }

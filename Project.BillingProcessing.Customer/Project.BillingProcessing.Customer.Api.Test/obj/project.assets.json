@@ -121,6 +121,41 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Grpc.Core/2.46.3": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.46.3",
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Core.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libgrpc_csharp_ext.x64.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libgrpc_csharp_ext.x64.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/grpc_csharp_ext.x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/grpc_csharp_ext.x86.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
       "Grpc.Core.Api/2.47.0": {
         "type": "package",
         "dependencies": {
@@ -131,6 +166,18 @@
         },
         "runtime": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {}
+        }
+      },
+      "Grpc.Core.Testing/2.46.3": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core": "2.46.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Core.Testing.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Core.Testing.dll": {}
         }
       },
       "Grpc.Net.Client/2.47.0": {
@@ -3384,6 +3431,34 @@
         "packageIcon.png"
       ]
     },
+    "Grpc.Core/2.46.3": {
+      "sha512": "lu7KP7BVWdvFXWbn/IFYHBQCpMohJwbLM1aL+nu2C0pY2CdS0idaUNAJNC2nZ60fXfqoxnSiERrIU6rC474oTw==",
+      "type": "package",
+      "path": "grpc.core/2.46.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net45/Grpc.Core.targets",
+        "buildTransitive/net45/Grpc.Core.targets",
+        "grpc.core.2.46.3.nupkg.sha512",
+        "grpc.core.nuspec",
+        "lib/net45/Grpc.Core.dll",
+        "lib/net45/Grpc.Core.pdb",
+        "lib/net45/Grpc.Core.xml",
+        "lib/netstandard1.5/Grpc.Core.dll",
+        "lib/netstandard1.5/Grpc.Core.pdb",
+        "lib/netstandard1.5/Grpc.Core.xml",
+        "lib/netstandard2.0/Grpc.Core.dll",
+        "lib/netstandard2.0/Grpc.Core.pdb",
+        "lib/netstandard2.0/Grpc.Core.xml",
+        "packageIcon.png",
+        "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so",
+        "runtimes/linux-x64/native/libgrpc_csharp_ext.x64.so",
+        "runtimes/osx-x64/native/libgrpc_csharp_ext.x64.dylib",
+        "runtimes/win-x64/native/grpc_csharp_ext.x64.dll",
+        "runtimes/win-x86/native/grpc_csharp_ext.x86.dll"
+      ]
+    },
     "Grpc.Core.Api/2.47.0": {
       "sha512": "oZXapxH/2WHAVALghNauo+r/bp6zjgQ6r0v8FizLLQg0/j/FkK2u3WZ7cLOL9Y5H4oLg+wLclO8FSvNTQpNR5Q==",
       "type": "package",
@@ -3406,6 +3481,27 @@
         "lib/netstandard2.1/Grpc.Core.Api.dll",
         "lib/netstandard2.1/Grpc.Core.Api.pdb",
         "lib/netstandard2.1/Grpc.Core.Api.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Core.Testing/2.46.3": {
+      "sha512": "U1xgy3rdghfmhuLKv9ml/iy6ar8UPi3sZnP9C1dq1WJyLHwH8wdwv4cLT/gP6vH3Y3qR7PKbwlAM1HsxJ2FleA==",
+      "type": "package",
+      "path": "grpc.core.testing/2.46.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.core.testing.2.46.3.nupkg.sha512",
+        "grpc.core.testing.nuspec",
+        "lib/net45/Grpc.Core.Testing.dll",
+        "lib/net45/Grpc.Core.Testing.pdb",
+        "lib/net45/Grpc.Core.Testing.xml",
+        "lib/netstandard1.5/Grpc.Core.Testing.dll",
+        "lib/netstandard1.5/Grpc.Core.Testing.pdb",
+        "lib/netstandard1.5/Grpc.Core.Testing.xml",
+        "lib/netstandard2.0/Grpc.Core.Testing.dll",
+        "lib/netstandard2.0/Grpc.Core.Testing.pdb",
+        "lib/netstandard2.0/Grpc.Core.Testing.xml",
         "packageIcon.png"
       ]
     },
@@ -10082,6 +10178,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Grpc.Core.Testing >= 2.46.3",
       "Microsoft.AspNetCore.Mvc.Testing >= 6.0.7",
       "Microsoft.AspNetCore.TestHost >= 6.0.7",
       "Microsoft.EntityFrameworkCore.InMemory >= 6.0.7",
@@ -10145,6 +10242,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Grpc.Core.Testing": {
+            "target": "Package",
+            "version": "[2.46.3, )"
+          },
           "Microsoft.AspNetCore.Mvc.Testing": {
             "target": "Package",
             "version": "[6.0.7, )"

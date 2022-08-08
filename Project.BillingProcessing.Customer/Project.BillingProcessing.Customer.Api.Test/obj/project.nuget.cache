@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RMqLx/8X2Qf091aWqm0XKN5G+ERJGpmDWg7paLDlot4rUGfIQrZgxlXFDsiM/w02JhWgzTDLfKAMVVs95PcUTA==",
+  "dgSpecHash": "+eCfOkrH5UjZw7nF+7QJ+bmO8+C98RFFIxzCRDogjG3hhpLuDlkRppkGSUx/t3MnBBd94xjyx21agWprR8MlYA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Api.Test\\Project.BillingProcessing.Customer.Test.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,9 @@
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\grpc.aspnetcore\\2.47.0\\grpc.aspnetcore.2.47.0.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\grpc.aspnetcore.server\\2.47.0\\grpc.aspnetcore.server.2.47.0.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\grpc.aspnetcore.server.clientfactory\\2.47.0\\grpc.aspnetcore.server.clientfactory.2.47.0.nupkg.sha512",
+    "C:\\Users\\ricardo.sousa\\.nuget\\packages\\grpc.core\\2.46.3\\grpc.core.2.46.3.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\grpc.core.api\\2.47.0\\grpc.core.api.2.47.0.nupkg.sha512",
+    "C:\\Users\\ricardo.sousa\\.nuget\\packages\\grpc.core.testing\\2.46.3\\grpc.core.testing.2.46.3.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\grpc.net.client\\2.47.0\\grpc.net.client.2.47.0.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\grpc.net.clientfactory\\2.47.0\\grpc.net.clientfactory.2.47.0.nupkg.sha512",
     "C:\\Users\\ricardo.sousa\\.nuget\\packages\\grpc.net.common\\2.47.0\\grpc.net.common.2.47.0.nupkg.sha512",
