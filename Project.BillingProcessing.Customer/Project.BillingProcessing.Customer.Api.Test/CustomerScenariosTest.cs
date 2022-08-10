@@ -167,7 +167,7 @@ public class CustomerScenariosTest : IClassFixture<CustomerScenariosBaseTest<Pro
         _customerServiceMock.Setup(a => a.FindBy(a => a.Identification == identificationFormated)).ReturnsAsync(Customers.Where(a => a.Identification == identificationFormated).FirstOrDefault());
         var service = new CustomerGrpcService(_customerServiceMock.Object, _mapperMock.Object, _loggerMock.Object);
         // A
-        var response = await service.GetCustomerByIdentification(new Api.Photos.GetCustomerByIdentificationRequest { Identification = identification }, TestServerCallContext.Create());
+        var response = await service.GetCustomerByIdentification(new Api.Photos.GetCustomerByIdentificationRequest { Identification = identification }, null);//TestServerCallContext.Create());
         // A        
         Assert.Equal(Customers.Where(a => a.Identification == identificationFormated).FirstOrDefault(), _mapperMock.Object.Map<Customer.Domain.CustomerEntity.Customer>(response));
     }
@@ -185,7 +185,7 @@ public class CustomerScenariosTest : IClassFixture<CustomerScenariosBaseTest<Pro
         //A
         var customerId = await _customerServiceMock.Object.Create(customer);
         var customerModelRequest = _mapperMock.Object.Map<CustomerModelRequest>(customer);
-        var response = await service.CreateCustomer(customerModelRequest, TestServerCallContext.Create());
+        var response = await service.CreateCustomer(customerModelRequest, null);// TestServerCallContext.Create());
         //A
         Assert.Equal(customerId, response.Id);
     }

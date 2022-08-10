@@ -9,12 +9,12 @@ namespace Project.BillingProcessing.Customer.Api.Controllers
     public class CustomersController : ControllerBase
     {
         private readonly ICustomerService _customerService;
-       
+
 
         public CustomersController(ICustomerService customerService)
         {
             _customerService = customerService;
-          
+
         }
 
 
@@ -60,6 +60,23 @@ namespace Project.BillingProcessing.Customer.Api.Controllers
                 return BadRequest(ex.Message);
             }
 
+        }
+
+
+        [Route("GetAll")]
+        [HttpGet]
+        [ProducesResponseType(typeof(Domain.CustomerEntity.Customer), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetAll(int take)
+        {
+            try
+            {
+                return Ok(await _customerService.GetAll(take));
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
     }
 }

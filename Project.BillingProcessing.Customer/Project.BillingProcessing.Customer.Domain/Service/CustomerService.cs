@@ -30,5 +30,10 @@ namespace Project.BillingProcessing.Customer.Domain.Service
         {
             return await _customerRespository.FindBy(where);
         }
+
+        public async Task<IEnumerable<CustomerEntity.Customer>> GetAll(int take = 10000)
+        {
+            return await _customerRespository.GetAll(take);
+        }
     }
 }

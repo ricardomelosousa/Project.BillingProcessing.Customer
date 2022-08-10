@@ -8,6 +8,7 @@ namespace Project.BillingProcessing.Customer.Api.Map
         public CustomerProfile()
         {
             CreateMap<Domain.CustomerEntity.Customer, CustomerModelResponse>().ReverseMap();
+            
         }
     }
 }

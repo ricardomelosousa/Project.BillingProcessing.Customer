@@ -37,5 +37,13 @@ namespace Project.BillingProcessing.Customer.Api.Services
             var result = await _customerService.Create(_mapper.Map<Domain.CustomerEntity.Customer>(customer));
             return new CreateCustomerModelResponse { Id = result};
         }
+
+        public override async Task<ReplyCustomerModel> GetAll(CustomerTake request, ServerCallContext context)
+        {
+            var customers = await _customerService.GetAll(request.Take);
+            ReplyCustomerModel replyCustomerModel = new ReplyCustomerModel();
+            replyCustomerModel.CustomerModelResponse.AddRange(_mapper.Map<List<CustomerModelResponse>>(customers));
+            return replyCustomerModel;
+        }
     }
 }

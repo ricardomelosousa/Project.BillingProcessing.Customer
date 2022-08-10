@@ -7,11 +7,21 @@ service  CustomerProtoService
 {
    rpc GetCustomerByIdentification(GetCustomerByIdentificationRequest) returns (CustomerModelResponse);
    rpc CreateCustomer(CustomerModelRequest) returns (CreateCustomerModelResponse);
+   rpc GetAll(CustomerTake) returns(ReplyCustomerModel);
 
 }
   message GetCustomerByIdentificationRequest
    {
       string identification = 1;
+   }
+
+   message ReplyCustomerModel
+   {
+      repeated CustomerModelResponse customerModelResponse = 1;
+   }
+   message CustomerTake
+   {
+     int32 take = 1;
    }
    message CustomerModelResponse
    {

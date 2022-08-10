@@ -24,5 +24,10 @@
 
         public async Task<Domain.CustomerEntity.Customer> FindBy(Expression<Func<Domain.CustomerEntity.Customer, bool>> where) 
             => await _customerContext.Set<Domain.CustomerEntity.Customer>().Where(where).FirstOrDefaultAsync();
+
+        public async Task<IEnumerable<Domain.CustomerEntity.Customer>> GetAll(int take)
+        {
+            return await _customerContext.Customers.Take(take).ToListAsync();
+        }
     }
 }
