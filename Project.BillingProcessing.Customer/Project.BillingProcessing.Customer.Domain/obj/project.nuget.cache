@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OnMxkmavBhAAHR7tsCBxIZn497v/ORsNorZQVgfIN+ZHsyp9zCD4hNXfQlbaQTSOlg9z+uAZJqHYq7GixeTD3w==",
+  "dgSpecHash": "To6BCkjHfJlUbs89rJIsX6mYoB+y/A8XagvFV/brm9lSgc2S2QlGAUSpMuOvRgJx4BhnRXKdYa82S0aNZyNvSA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ricardo.sousa\\Desktop\\Projeto Micros\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Domain\\Project.BillingProcessing.Customer.Domain.csproj",
+  "projectFilePath": "C:\\Wgit\\Customer\\Project.BillingProcessing.Customer\\Project.BillingProcessing.Customer.Domain\\Project.BillingProcessing.Customer.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "Project.BillingProcessing.Customer.Api.Photos";
+option csharp_namespace = "GrpcCustomers";
 
 
 service  CustomerProtoService

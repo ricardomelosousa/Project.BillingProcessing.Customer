@@ -1,3 +1,5 @@
+using Project.BillingProcessing.Customer.Api.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 var logger = new LoggerConfiguration()
         .ReadFrom.Configuration(builder.Configuration)
@@ -29,10 +31,9 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
-
+app.MapGrpcService<CustomerGrpcService>().RequireHost("*:5001");
 app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
 public partial class Program { }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Grpc.Core;
-using Project.BillingProcessing.Customer.Api.Photos;
+using GrpcCustomers;
 
 namespace Project.BillingProcessing.Customer.Api.Services
 {

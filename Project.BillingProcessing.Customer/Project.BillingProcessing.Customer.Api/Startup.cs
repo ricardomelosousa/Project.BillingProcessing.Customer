@@ -1,4 +1,6 @@
-﻿namespace Project.BillingProcessing.Customer.Api;
+﻿using Project.BillingProcessing.Customer.Api.Services;
+
+namespace Project.BillingProcessing.Customer.Api;
 public class Startup
 {
     public Startup(IConfiguration configuration)
@@ -38,6 +40,7 @@ public class Startup
         app.UseAuthorization();
         app.UseEndpoints(endpoints =>
         {
+            endpoints.MapGrpcService<CustomerGrpcService>();//.RequireHost("*:5001");
             endpoints.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Employees}/{action=Index}/{id?}");

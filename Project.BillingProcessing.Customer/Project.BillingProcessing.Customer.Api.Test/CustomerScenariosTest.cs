@@ -1,12 +1,10 @@
 using AutoMapper;
-using Grpc.Core.Testing;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Project.BillingProcessing.Customer.Api.Controllers;
-using Project.BillingProcessing.Customer.Api.Photos;
 using Project.BillingProcessing.Customer.Api.Services;
 using Project.BillingProcessing.Customer.Domain.Service.Interfaces;
 using System.Threading.Tasks;
+using GrpcCustomers;
 
 namespace Project.BillingProcessing.Customer.Test;
 public class CustomerScenariosTest : IClassFixture<CustomerScenariosBaseTest<Program>>
@@ -167,7 +165,7 @@ public class CustomerScenariosTest : IClassFixture<CustomerScenariosBaseTest<Pro
         _customerServiceMock.Setup(a => a.FindBy(a => a.Identification == identificationFormated)).ReturnsAsync(Customers.Where(a => a.Identification == identificationFormated).FirstOrDefault());
         var service = new CustomerGrpcService(_customerServiceMock.Object, _mapperMock.Object, _loggerMock.Object);
         // A
-        var response = await service.GetCustomerByIdentification(new Api.Photos.GetCustomerByIdentificationRequest { Identification = identification }, null);//TestServerCallContext.Create());
+        var response = await service.GetCustomerByIdentification(new GrpcCustomers.GetCustomerByIdentificationRequest { Identification = identification }, null);//TestServerCallContext.Create());
         // A        
         Assert.Equal(Customers.Where(a => a.Identification == identificationFormated).FirstOrDefault(), _mapperMock.Object.Map<Customer.Domain.CustomerEntity.Customer>(response));
     }
